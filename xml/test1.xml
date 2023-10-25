@@ -1,0 +1,28 @@
+<VAST version="3.0">
+    <Ad id="1683029-4532818">
+        <InLine>
+            <AdSystem>XXX</AdSystem>
+            <AdTitle>Linear Video Ad</AdTitle>
+            <Error>
+                <![CDATA[ https://ads.adfox.ru/259055/event?hash=2b43c4a625cf7563&rand=bkoohsm&p5=jxxje&sj=pMXJvscOfvFXJkvSc2iHW-dzCEGS0S4eYfmV6g80APaJ9UrR44jZSOtFrnfgRQ%3D%3D&lts=fjbvsjq&pr=a&p1=ccyta&rqs=f-6cqc4H32A623xiE6Kj0myy9RgzWsDp&pm=u&p2=ftlf ]]>
+            </Error>
+            <Impression id="1" />
+            <Creatives>
+                <Creative>
+                    <Linear>
+                        <Duration>00:00:30</Duration>
+                        <TrackingEvents></TrackingEvents>
+                        <AdParameters>
+                            <![CDATA[ {"site":"123456","bt":"99","xpid":"DDvErEB03eU5WWsLHkaOuLV5a-PMIkKfx8-67edMtkEKbeLHUXMHyddmhB5pXLOH24rt7tpM3x4wITvOvdKnl","pass":"https://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=728293&bt=99&tuid=1&bid=7914242&bn=7914242&rnd=1712015669","siteParams":{"par1":"par1", "par2": "par2"}} ]]>
+                        </AdParameters>
+                        <MediaFiles>
+                            <MediaFile height="0" width="0" delivery="progressive" type="application/x-javascript" apiFramework="VPAID">
+                                <![CDATA[ https://files.adriver.ru/d.kabilov/vpaid-wrapper/index.js ]]>
+                            </MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>
