@@ -3,6 +3,9 @@
         <InLine>
             <AdSystem>XXX</AdSystem>
             <AdTitle>Linear Video Ad</AdTitle>
+            <Impression>
+            <![CDATA[ https://ev.adriver.ru/cgi-bin/event.cgi?xpid=DOd7aKS7OT0T8LYtnNoy3emDHKgdlRIv0Hu0_tntCTdZofM8GeIG2dJOmonRwXqX9HPpipy-b8wFZoDGYL9M3sdgW&sid=1&sliceid=0&bn=8908282&pz=0&sz=&ad=757063&bid=8908282&bt=61&tuid=-1&type=0&custom=207=&tail256= ]]>
+            </Impression>
             <Error>
                 <![CDATA[ https://ads.adfox.ru/259055/event?hash=2b43c4a625cf7563&rand=bkoohsm&p5=jxxje&sj=pMXJvscOfvFXJkvSc2iHW-dzCEGS0S4eYfmV6g80APaJ9UrR44jZSOtFrnfgRQ%3D%3D&lts=fjbvsjq&pr=a&p1=ccyta&rqs=f-6cqc4H32A623xiE6Kj0myy9RgzWsDp&pm=u&p2=ftlf ]]>
             </Error>
@@ -10,107 +13,125 @@
             <Creatives>
                 <Creative>
                     <Linear>
-                        <Duration>00:00:30</Duration>
+                        <Duration>00:00:06</Duration>
                         <TrackingEvents></TrackingEvents>
                         <AdParameters>
                             <![CDATA[ {
-                                "jstracker": [
-                                    "https://files.adriver.ru/z.daulenov/JSTrackerLoader/jsscript.js"
-                                ],
-                                "TrackingEvents": {
-                                    "acceptInvitation": [
-                                        "https://example.com/acceptInvitation"
-                                    ],
-                                    "close": [
-                                        "https://example.com/close"
-                                    ],
-                                    "collapse": [
-                                        "https://example.com/collapse"
-                                    ],
-                                    "complete": [
-                                        "https://example.com/complete"
-                                    ],
-                                    "creativeView": [
-                                        "https://example.com/creativeView"
-                                    ],
-                                    "exitFullscreen": [
-                                        "https://example.com/exitFullscreen"
-                                    ],
-                                    "expand": [
-                                        "https://example.com/expand"
-                                    ],
-                                    "firstQuartile": [
-                                        "https://example.com/firstQuartile"
-                                    ],
-                                    "fullscreen": [
-                                        "https://example.com/fullscreen"
-                                    ],
-                                    "midpoint": [
-                                        "https://example.com/midpoint"
-                                    ],
-                                    "mute": [
-                                        "https://example.com/mute"
-                                    ],
-                                    "pause": [
-                                        "https://example.com/pause"
-                                    ],
-                                    "progress": [
-                                        "https://example.com/progress"
-                                    ],
-                                    "resume": [
-                                        "https://example.com/resume"
-                                    ],
-                                    "rewind": [
-                                        "https://example.com/rewind"
-                                    ],
-                                    "skip": [
-                                        "https://example.com/skip"
-                                    ],
-                                    "start": [
-                                        "https://example.com/start"
-                                    ],
-                                    "thirdQuartile": [
-                                        "https://example.com/thirdQuartile"
-                                    ],
-                                    "unmute": [
-                                        "https://example.com/unmute"
-                                    ]
-                                },
-                                "progress_offset": "20%",
-                                "site": "123456",
+                                "pass": "https://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=728293&bt=99&tuid=1&bid=7914242&bn=7914242&rnd=1712015669",
+                                "site": "1",
                                 "bt": "99",
-                                "xpid": "DDvErEB03eU5WWsLHkaOuLV5a-PMIkKfx8-67edMtkEKbeLHUXMHyddmhB5pXLOH24rt7tpM3x4wITvOvdKnl",
-                                "pass": "https://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=757063&bt=61&tuid=1&pid=3633195&bid=8908282&bn=8908282&rnd=477805782",
-                                "siteParams": {
-                                    "par1": "par1",
-                                    "par2": "par2"
+                                "bn": "7914242",
+                                "sliceid": "0",
+                                "pz": "0",
+                                "sz": "",
+                                "ad": "728293",
+                                "bid": "7914242",
+                                "xpid": "Dby02Qk_LZ4eqtiwW8sa1KhSO95ANuSomUscrzI9ve-aKHR5F2EjDSiB8L0zbZE4tqhOaZFemDUhzrmgd40RJTf0",
+                                "erir": "",
+                                "domain": "https://servers2.adriver.ru",
+                                "url": "https://adriver.ru/",
+                                "extstr": {
+                                "exs0": "",
+                                "exs1": "",
+                                "exs2": "",
+                                "exs3": "",
+                                "exs4": "",
+                                "exs5": ""
+                                },
+                                "tail256": "",
+                                "custom": {},
+                                "skiptime": "00:00:00",
+                                "duration": "00:00:06",
+                                "TrackingEvents": {
+                                "acceptInvitation": [],
+                                "close": [],
+                                "collapse": [],
+                                "complete": [],
+                                "creativeView": [],
+                                "exitFullscreen": [],
+                                "expand": [],
+                                "firstQuartile": [],
+                                "fullscreen": [],
+                                "midpoint": [],
+                                "mute": [],
+                                "pause": [],
+                                "progress": [],
+                                "progress_offset": "",
+                                "resume": [],
+                                "rewind": [],
+                                "skip": [],
+                                "start": [],
+                                "thirdQuartile": [],
+                                "unmute": []
                                 },
                                 "chwl": "",
-                                "pz": "PZ12345",
-                                "ad": "AD12345",
-                                "bid": "BID12345",
-                                "bn": "BN12345",
-                                "tail256": "TAIL25612345",
-                                "sz": "SZ12345",
-                                "sliceid": "SLICEID12345",
+                                "clickable": 1,
+                                "close_click": 0,
                                 "cv": {
-                                    "area": 0.6,
-                                    "time": 5000
+                                "time": "",
+                                "area": ""
                                 },
-                                "custom": {
-                                    "10": "CustomValue10",
-                                    "20": "CustomValue20"
+                                "playerHandles": "0",
+                                "buttons": [
+                                {
+                                    "image": "https://content.adriver.ru/images/0006321/0006321413/0/close.png",
+                                    "name": "close",
+                                    "style": {
+                                    "bottom": "",
+                                    "cursor": "pointer",
+                                    "height": "48px",
+                                    "left": "",
+                                    "position": "absolute",
+                                    "right": "10px",
+                                    "top": "10px",
+                                    "width": "48px"
+                                    }
                                 },
-                                "extstr": {
-                                    "key1": "extstrKey1",
-                                    "key2": "extstrKey2"
+                                {
+                                    "image": "https://content.adriver.ru/images/0006321/0006321413/0/mute_.png",
+                                    "name": "mute",
+                                    "style": {
+                                    "bottom": "10px",
+                                    "cursor": "pointer",
+                                    "height": "38px",
+                                    "left": "10px",
+                                    "position": "absolute",
+                                    "right": "",
+                                    "top": "",
+                                    "width": "38px"
+                                    }
+                                },
+                                {
+                                    "image": "https://content.adriver.ru/images/0006321/0006321413/0/unmute_.png",
+                                    "name": "unmute",
+                                    "style": {
+                                    "bottom": "10px",
+                                    "cursor": "pointer",
+                                    "height": "38px",
+                                    "left": "10px",
+                                    "position": "absolute",
+                                    "right": "",
+                                    "top": "",
+                                    "width": "38px"
+                                    }
                                 }
-                            } 
+                                ],
+                                "videos": [
+                                {
+                                    "mimetype": "video/mp4",
+                                    "url": "https://servers2.adriver.ru/mf/0007914/0007914242/0/video1.mp4"
+                                }
+                                ],
+                                "jstracker": []
+                            }
                         ]]>
                         </AdParameters>
                         <MediaFiles>
-                            <MediaFile height="0" width="0" delivery="progressive" type="application/x-javascript" apiFramework="VPAID">
-                                <![CDATA[ https://files.adriver.ru/d.kabilov/vpaid-wrapper/index.js ]]>
+                            <MediaFile delivery="progressive" bitrate="256" width="0" height="0" type="application/javascript" apiFramework="VPAID">
+                                 <![CDATA[ https://files.adriver.ru/d.kabilov/vpaid-wrapper/index.js ]]>
+                            </MediaFile>
+                            <MediaFile delivery="progressive" bitrate="256" width="0" height="0" type="application/javascript" apiFramework="VPAID">
+                                 <![CDATA[ https://files.adriver.ru/d.kabilov/vpaid-wrapper/index.js ]]>
                             </MediaFile>
                         </MediaFiles>
                     </Linear>

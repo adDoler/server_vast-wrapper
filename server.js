@@ -4,7 +4,10 @@ const app = express();
 const fs = require('fs');
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://content.adriver.ru');
+  const origin = req.headers.origin;
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', 'true'); 
@@ -24,34 +27,60 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 const trackingEvents = {
-  acceptInvitation: ["https://example.com/acceptInvitation"],
-  close: ["https://example.com/close"],
-  collapse: ["https://example.com/collapse"],
-  complete: ["https://example.com/complete"],
-  creativeView: ["https://example.com/creativeView"],
-  exitFullscreen: ["https://example.com/exitFullscreen"],
-  expand: ["https://example.com/expand"],
-  firstQuartile: ["https://example.com/firstQuartile"],
-  fullscreen: ["https://example.com/fullscreen"],
-  midpoint: ["https://example.com/midpoint"],
-  mute: ["https://example.com/mute"],
-  pause: ["https://example.com/pause"],
-  progress: ["https://example.com/progress"],
-  resume: ["https://example.com/resume"],
-  rewind: ["https://example.com/rewind"],
-  skip: ["https://example.com/skip"],
-  start: ["https://example.com/start"],
-  thirdQuartile: ["https://example.com/thirdQuartile"],
-  unmute: ["https://example.com/unmute"]
+  acceptInvitation: ["acceptInvitation"],
+  acceptInvitation1: ["acceptInvitation1"],
+  close: ["close"],
+  close1: ["close1"],
+  collapse: ["collapse"],
+  collapse1: ["collapse1"],
+  complete: ["complete"],
+  complete1: ["complete1"],
+  creativeView: ["creativeView"],
+  creativeView1: ["creativeView1"],
+  exitFullscreen: ["exitFullscreen"],
+  exitFullscreen1: ["exitFullscreen1"],
+  expand: ["expand"],
+  expand1: ["expand1"],
+  firstQuartile: ["firstQuartile"],
+  firstQuartile1: ["firstQuartile1"],
+  fullscreen: ["fullscreen"],
+  fullscreen1: ["fullscreen1"],
+  midpoint: ["midpoint"],
+  midpoint1: ["midpoint1"],
+  mute: ["mute"],
+  mute1: ["mute1"],
+  pause: ["pause"],
+  pause1: ["pause1"],
+  progress: ["progress"],
+  progress1: ["progress1"],
+  resume: ["resume"],
+  resume1: ["resume1"],
+  rewind: ["rewind"],
+  rewind1: ["rewind1"],
+  skip: ["skip"],
+  skip1: ["skip1"],
+  start: ["start"],
+  start1: ["start1"],
+  thirdQuartile: ["thirdQuartile"],
+  thirdQuartile1: ["thirdQuartile1"],
+  unmute: ["unmute"],
+  unmute1: ["unmute1"]
 };
 
 for (const eventName in trackingEvents) {
   const eventUrl = trackingEvents[eventName];
-  app.get(`/${eventName}`, (req, res) => {
+  app.get(`/${eventUrl[0]}`, (req, res) => {
     console.log(`Принят запрос для события ${eventName} по URL: ${eventUrl}`);
-    res.send(`Запрос для события ${eventName} принят успешно`);
+    const filePath = 'public/xml/event.gif';
+  
+    res.sendFile(filePath, { root: __dirname });
   });
 }
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Внутренняя ошибка сервера');
+});
 
 app.post('/upload', upload.single('file'), (req, res) => {
   res.status(200).json({ message: 'Файл успешно загружен' });
