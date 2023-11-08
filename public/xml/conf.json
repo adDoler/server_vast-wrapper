@@ -1,0 +1,66 @@
+{
+    "adFormats": {
+        "fly-roll": 1,
+        "in-article": 0,
+        "in-article-fly-roll": 1
+    },
+    "adriver_urls": [
+        {
+            "priority": 1,
+            "rules": 2,
+            "system": "adriver",
+            "url": "https://ad.adriver.ru/cgi-bin/erle.cgi?sid=207258&bt=61&tuid=1&pz=0&vz=1&target=top&rnd=1440787746"
+        },
+        {
+            "priority": 2,
+            "rules": 1,
+            "system": "adriver",
+            "url": "https://ad.adriver.ru/cgi-bin/erle.cgi?sid=207258&bn=2&bt=61&tuid=1&pz=0&vp=4&target=top&rnd=765761591"
+        }
+    ],
+    "autoPlay": 1,
+    "close": {
+        "animated": 0,
+        "include": 0
+    },
+    "closingTimeIndicator": {
+        "include": 0,
+        "percentage": 0,
+        "type": "line"
+    },
+    "flyHeight": 300,
+    "flyWidth": 400,
+    "fontColor": "#ffffff",
+    "fullScreen": {
+        "animated": 0,
+        "include": 0
+    },
+    "height": 600,
+    "mutedPlay": 0,
+    "other_urls": [
+        {
+            "priority": 3,
+            "rules": 1,
+            "system": "other",
+            "url": "https://ad.adriver.ru/cgi-bin/erle.cgi?sid=207258&bt=61&tuid=1&pz=0&vz=1&target=top&rnd=14407877"
+        }
+    ],
+    "playStop": {
+        "animated": 0,
+        "include": 0
+    },
+    "timer": {
+        "animated": 0,
+        "include": 1
+    },
+    "title": {
+        "color": "#000000",
+        "content": "�������"
+    },
+    "totalPlay": 3,
+    "volume": {
+        "animated": 1,
+        "include": 1
+    },
+    "width": 800
+}
