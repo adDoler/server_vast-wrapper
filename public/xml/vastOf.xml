@@ -27,7 +27,7 @@
 	<Tracking event="collapse"><![CDATA[https://ev.adriver.ru/cgi-bin/event.cgi?xpid=DUREmdSraz2SBePuZ-UJ8_X-tu2b3i4MSHE05NlaIy2sK33eiu54V5P7hzyctJZ8BN1fpE7eI8_V89S9eNUgJEpGz&sid=1&sliceid=0&bn=8908282&pz=0&sz=&ad=757063&bid=8908282&bt=61&tuid=-1&type=13&tail256=]]></Tracking>
 	<Tracking event="acceptInvitation"><![CDATA[https://ev.adriver.ru/cgi-bin/event.cgi?xpid=DUREmdSraz2SBePuZ-UJ8_X-tu2b3i4MSHE05NlaIy2sK33eiu54V5P7hzyctJZ8BN1fpE7eI8_V89S9eNUgJEpGz&sid=1&sliceid=0&bn=8908282&pz=0&sz=&ad=757063&bid=8908282&bt=61&tuid=-1&type=14&tail256=]]></Tracking>
 	<Tracking event="close"><![CDATA[https://ev.adriver.ru/cgi-bin/event.cgi?xpid=DUREmdSraz2SBePuZ-UJ8_X-tu2b3i4MSHE05NlaIy2sK33eiu54V5P7hzyctJZ8BN1fpE7eI8_V89S9eNUgJEpGz&sid=1&sliceid=0&bn=8908282&pz=0&sz=&ad=757063&bid=8908282&bt=61&tuid=-1&type=15&tail256=]]></Tracking>
-	<Tracking event="progress" offset="00:00:05.000"><![CDATA[https://progress.com]]></Tracking>
+	<Tracking event="progress" offset="00:00:05.000"><![CDATA[https://example/progress.com]]></Tracking>
 </TrackingEvents>
 <VideoClicks>
 	<ClickThrough><![CDATA[https://ad.adriver.ru/cgi-bin/click.cgi?xpid=DUREmdSraz2SBePuZ-UJ8_X-tu2b3i4MSHE05NlaIy2sK33eiu54V5P7hzyctJZ8BN1fpE7eI8_V89S9eNUgJEpGz&sid=1&sliceid=0&bn=8908282&pz=0&sz=&ad=757063&bid=8908282&erir=&bt=61&tail256=]]></ClickThrough>
