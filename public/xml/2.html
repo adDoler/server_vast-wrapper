@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<br>
+
+    <div id="a1">
+        <p>not find</p>
+    </div>
+    <div id="a2" style="display:none;">
+        <p style="color:red;">find</p>
+    </div>
+    
+    <script>
+        
+        const dValue = 100;
+        const createBanner = () => {
+            
+            const banner = document.createElement("div");
+
+            banner.style.height = dValue + "px";
+            banner.style.width = dValue + "px";
+            banner.style.opacity = dValue;
+            banner.style.zIndex = dValue;
+            banner.style.background = "red";
+            banner.style.top = "120px";
+            banner.style.position = "absolute"
+
+            const bannerStyle = window.getComputedStyle(banner);
+            banner.id = "adriverAdBanner";
+            document.body.append(banner);
+            
+            const classes = "content-list__ad-label ad banner adriver tracker analytics ads reklama ad-sidebar adsbox adblock-blocker";
+            
+            var observer = new MutationObserver(function(mutations) {
+                const splitClasses = classes.split(" ");
+                
+                const intervalId = setInterval(() => {
+                    for (var i = 0; i < splitClasses.length; i++) {
+                        var styles = window.getComputedStyle(banner, "." + splitClasses[0]);
+                        if (
+                            styles.display === "none"
+                            || bannerStyle.height !== dValue + "px"
+                            || bannerStyle.width !== dValue + "px"
+                            || bannerStyle.zIndex != dValue
+                        ) {
+                            document.getElementById("a1").style.display = "none";
+                            document.getElementById("a2").style.display = "block";
+                            clearInterval(intervalId);
+                            clearTimeout(timerId);
+                            break;
+                        }  
+    
+                    }
+                }, 100);
+
+                const timerId = setTimeout(() => {
+                    clearInterval(intervalId);
+                    console.log("not find");
+                }, 2000);
+
+            });
+
+            var config = { attributes: true };
+            observer.observe(banner, config);
+
+            banner.className = classes;
+
+        }
+
+        createBanner();
+        let s = 100;
+
+    </script>
+</body>
+</html>
