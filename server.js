@@ -14,6 +14,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true'); 
   next();
 });
+app.use('/public', express.static('public'));
 
 app.use('/up', express.static('public'));
 const storage = multer.diskStorage({
