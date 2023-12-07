@@ -1,0 +1,34 @@
+<VAST version="2.0">
+    <Ad id="773396">
+        <InLine>
+            <AdSystem>AdRiver</AdSystem>
+            <AdTitle>VPAID Ad</AdTitle>
+            <Impression>
+            <![CDATA[ https://ad.adriver.ru/cgi-bin/event.cgi?xpid=DByMezyShSU9yPPyyT6_fxgIGwsVyDQIU3w9CfSkdET2L-128ZwwgaZ0d6ymBJ5lFiRZcGK6GEkc7kjkywaNQ8Vh-&sid=1&sliceid=0&bn=9654586&pz=0&sz=&ad=773396&bid=9654586&bt=99&tuid=-1&type=0&custom=207=&tail256= ]]>
+            </Impression>
+            <Impression>
+            <![CDATA[ ]]>
+            </Impression>
+            <Impression>
+            <![CDATA[ https://www.tns-counter.ru/V13a****ar_ru/ru/UTF-8/tmsec=168050_773396-3820242/456 ]]>
+            </Impression>
+            <Creatives>
+                <Creative id="9654586">
+                    <Linear>
+                        <Duration>00:00:20</Duration>
+                        <TrackingEvents> </TrackingEvents>
+                        <AdParameters>
+                        <![CDATA[ {"site":"1","bt":"99","bn":"9654586","sliceid":"0","pz":"0","sz":"","ad":"773396","bid":"9654586","xpid":"DByMezyShSU9yPPyyT6_fxgIGwsVyDQIU3w9CfSkdET2L-128ZwwgaZ0d6ymBJ5lFiRZcGK6GEkc7kjkywaNQ8Vh-","erir":"123","domain":"https://mlb1.adriver.ru", "url":"https://rolfoil.ru/ultra/?utm_source=digitalalliancevideonetwork&utm_medium=cpm&utm_campaign=sintec!rolf!Rolf_2023!digtlallcvidnt!vidnt!20secskip!video!msk_mo!main!20sec_skip__IiTYY&utm_content=sintec!rolf!Rolf_2023!digtlallcvidnt!vidnt!20secskip!video!msk_mo!main!20sec_skip__IiTYY_&utm_term=_____IiTYY&utm_a=sintec!rolf!Rolf_2023!digtlallcvidnt!vidnt!20secskip!video!msk_mo!main!20sec_skip__IiTYY&erid=123&adrclid=DByMezyShSU9yPPyyT6_fxgIGwsVyDQIU3w9CfSkdET2L-128ZwwgaZ0d6ymBJ5lFiRZcGK6GEkc7kjkywaNQ8Vh-", "extstr":{"exs0":"","exs1":"","exs2":"","exs3":"","exs4":"","exs5":""}, "tail256":"", "custom":{},"skiptime":"00:00:00", "duration":"00:00:20.000", "TrackingEvents":{"acceptInvitation":[],"close":[],"collapse":[],"complete":[],"creativeView":[],"exitFullscreen":[],"expand":[],"firstQuartile":[],"fullscreen":[],"midpoint":[],"mute":[],"pause":[],"progress":[],"progress_offset":"","resume":[],"rewind":[],"skip":[],"start":[],"thirdQuartile":[],"unmute":[]}, "chwl":"", "clickable":1, "close_click":0, "cv":{"time":"", "area":""}, "playerHandles": "0" ,"buttons":[],"videos":[{"mimetype":"video/mp4","url":"https://mlb1.adriver.ru/mf/0009654/0009654586/0/Digital_Alliance_ROLF20_-61_16x9_.mp4"}], "jstracker":[]} ]]>
+                        </AdParameters>
+                        <VideoClicks> </VideoClicks>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" bitrate="256" width="0" height="0" type="application/javascript" apiFramework="VPAID">
+                            <![CDATA[ https://files.adriver.ru/z.daulenov/vpaid2/vpaid.js ]]>
+                            </MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>
