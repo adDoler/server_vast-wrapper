@@ -1246,7 +1246,7 @@
     }());
 
     // eslint-disable-next-line max-len
-    var AD_CLASSES = "prevent-listener td_ad_background_click_target abort-on-property-read discounts-section tpl-wrapper app-container adsblock _vwmso abort-on-property-read NativeAd dom_annotate_ad_image_ad q-box vda-closeplay content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
+    var AD_CLASSES = ".block-content div-gpt-ad amp-ad- adDisplay-module prevent-listener td_ad_background_click_target abort-on-property-read discounts-section tpl-wrapper app-container adsblock _vwmso abort-on-property-read NativeAd dom_annotate_ad_image_ad q-box vda-closeplay content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
@@ -1291,6 +1291,7 @@
                 adElement.className = AD_CLASSES;
                 adElement.id = "adriver";
                 adElement.setAttribute("data-track", "ad-iframe-top");
+                adElement.onclick = function () { return "location.href='http://www.reimageplus.com"; };
                 if (document.readyState === "loading")
                     document.addEventListener("DOMContentLoaded", handleContentLoaded);
                 else {
@@ -1318,7 +1319,7 @@
                 visibility: "visible",
                 background: "red"
             });
-            ahref.href = "https://bit.ly/";
+            ahref.href = "https://sweetjack.com/local";
             document.body.append(ahref);
             return ahref;
         };
