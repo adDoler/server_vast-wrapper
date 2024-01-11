@@ -1246,11 +1246,11 @@
     }());
 
     // eslint-disable-next-line max-len
-    var AD_CLASSES = "single_ad_300x250 showAdContainer right_adv right-ad-2 horizontal-ad-container headerad-placeholder ad_eniro block-content div-gpt-ad amp-ad- adDisplay-module prevent-listener td_ad_background_click_target abort-on-property-read discounts-section tpl-wrapper app-container adsblock _vwmso abort-on-property-read NativeAd dom_annotate_ad_image_ad q-box vda-closeplay content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
+    var AD_CLASSES = "content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
-    var SIZE = "1000px";
+    var SIZE = "1px";
     var OPACITY = "1";
     /**
      * Класс для обнаружения наличия блокировщика рекламы.
@@ -1267,6 +1267,13 @@
         AdblockDetector.check = function () {
             var _this = this;
             var adElement = this.createAdElement();
+            var img = document.createElement("img");
+            // eslint-disable-next-line max-len
+            img.src = "https://ev.adriver.ru/cgi-bin/event.cgi?xpid=Dqjd0YJ1uwnqBcc6MmvC2RJiGjP2u4wdmFBerwHcgIkDUhbc37OsibnqVE4U5jytYStj5nRy4J2hl-jjDLfzDqyw&bid=1062071";
+            img.style.height = "10px";
+            img.style.width = "10px";
+            img.style.background = "red";
+            document.body.append(img);
             return new Promise(function (resolve) {
                 var timeoutId = null;
                 var cleanup = function () {
@@ -1275,6 +1282,7 @@
                     else
                         document.removeEventListener("DOMContentLoaded", handleContentLoaded);
                     loop.stop();
+                    adElement.remove();
                 };
                 var handleContentLoaded = function () {
                     setTimeout(function () {
@@ -1289,9 +1297,6 @@
                     }
                 }, INTERVAL);
                 adElement.className = AD_CLASSES;
-                adElement.id = "adriver";
-                adElement.setAttribute("data-track", "ad-iframe-top");
-                adElement.onclick = function () { return "location.href='http://www.reimageplus.com"; };
                 if (document.readyState === "loading")
                     document.addEventListener("DOMContentLoaded", handleContentLoaded);
                 else {
@@ -1309,19 +1314,16 @@
          * @returns Созданный элемент рекламы.
          */
         AdblockDetector.createAdElement = function () {
-            document.createElement("div");
-            var ahref = document.createElement("a");
-            setStyles(ahref, {
+            var adElement = document.createElement("div");
+            setStyles(adElement, {
                 width: SIZE,
                 height: SIZE,
                 opacity: OPACITY,
                 display: "block",
-                visibility: "visible",
-                background: "red"
+                visibility: "visible"
             });
-            ahref.href = "https://sweetjack.com/local";
-            document.body.append(ahref);
-            return ahref;
+            document.body.append(adElement);
+            return adElement;
         };
         /**
          * Проверяет стили предоставленного элемента для обнаружения блокировщика рекламы.
