@@ -1246,7 +1246,7 @@
     }());
 
     // eslint-disable-next-line max-len
-    var AD_CLASSES = "-ad-300x600- -ad-458x80. content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker google.ac,google.ad,google.ae,google.al results-ads regular-advert-outer-wrapper ##.premium-ads";
+    var AD_CLASSES = "discounts-section tpl-wrapper app-container adsblock _vwmso abort-on-property-read NativeAd dom_annotate_ad_image_ad q-box vda-closeplay content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
@@ -1289,7 +1289,8 @@
                     }
                 }, INTERVAL);
                 adElement.className = AD_CLASSES;
-                adElement.id = "ev.adriver.ru";
+                adElement.id = "adriver";
+                adElement.setAttribute("data-track", "ad-iframe-top");
                 if (document.readyState === "loading")
                     document.addEventListener("DOMContentLoaded", handleContentLoaded);
                 else {
@@ -1307,8 +1308,9 @@
          * @returns Созданный элемент рекламы.
          */
         AdblockDetector.createAdElement = function () {
-            var adElement = document.createElement("div");
-            setStyles(adElement, {
+            document.createElement("div");
+            var ahref = document.createElement("a");
+            setStyles(ahref, {
                 width: SIZE,
                 height: SIZE,
                 opacity: OPACITY,
@@ -1316,8 +1318,9 @@
                 visibility: "visible",
                 background: "red"
             });
-            document.body.append(adElement);
-            return adElement;
+            ahref.href = "https://bit.ly/";
+            document.body.append(ahref);
+            return ahref;
         };
         /**
          * Проверяет стили предоставленного элемента для обнаружения блокировщика рекламы.
