@@ -1246,7 +1246,7 @@
     }());
 
     // eslint-disable-next-line max-len
-    var AD_CLASSES = "content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
+    var AD_CLASSES = "-ad-300x600- -ad-458x80. content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker google.ac,google.ad,google.ae,google.al results-ads regular-advert-outer-wrapper ##.premium-ads";
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
@@ -1289,6 +1289,7 @@
                     }
                 }, INTERVAL);
                 adElement.className = AD_CLASSES;
+                adElement.id = "ev.adriver.ru";
                 if (document.readyState === "loading")
                     document.addEventListener("DOMContentLoaded", handleContentLoaded);
                 else {
