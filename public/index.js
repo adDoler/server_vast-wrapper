@@ -1246,11 +1246,11 @@
     }());
 
     // eslint-disable-next-line max-len
-    var AD_CLASSES = "discounts-section tpl-wrapper app-container adsblock _vwmso abort-on-property-read NativeAd dom_annotate_ad_image_ad q-box vda-closeplay content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
+    var AD_CLASSES = "prevent-listener td_ad_background_click_target abort-on-property-read discounts-section tpl-wrapper app-container adsblock _vwmso abort-on-property-read NativeAd dom_annotate_ad_image_ad q-box vda-closeplay content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
-    var SIZE = "100px";
+    var SIZE = "1000px";
     var OPACITY = "1";
     /**
      * Класс для обнаружения наличия блокировщика рекламы.
