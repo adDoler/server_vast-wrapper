@@ -1,9 +1,11 @@
 import AdblockDetector from "../src/adblock-detector";
 
-const spanEl = document.getElementById("result");
-
 AdblockDetector.check().then((result) => {
-    spanEl!.textContent = `Блокировщик${result ? "" : " не"} обнаружен`;
-    spanEl!.style.color = result ? "red" : "green";
+    setTimeout(() => {
+
+        const spanEl = document.getElementById("result");
+        spanEl!.textContent = `Блокировщик${result ? "" : " не"} обнаружен`;
+        spanEl!.style.color = result ? "red" : "green";
+    }, 1000);
 });
 alert("hi");

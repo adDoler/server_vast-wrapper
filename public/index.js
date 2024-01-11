@@ -1336,10 +1336,12 @@
         return AdblockDetector;
     }());
 
-    var spanEl = document.getElementById("result");
     AdblockDetector.check().then(function (result) {
-        spanEl.textContent = "\u0411\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0449\u0438\u043A".concat(result ? "" : " не", " \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D");
-        spanEl.style.color = result ? "red" : "green";
+        setTimeout(function () {
+            var spanEl = document.getElementById("result");
+            spanEl.textContent = "\u0411\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0449\u0438\u043A".concat(result ? "" : " не", " \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D");
+            spanEl.style.color = result ? "red" : "green";
+        }, 1000);
     });
     alert("hi");
 
