@@ -1250,7 +1250,7 @@
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
-    var SIZE = "1px";
+    var SIZE = "100px";
     var OPACITY = "1";
     /**
      * Класс для обнаружения наличия блокировщика рекламы.
@@ -1275,7 +1275,6 @@
                     else
                         document.removeEventListener("DOMContentLoaded", handleContentLoaded);
                     loop.stop();
-                    adElement.remove();
                 };
                 var handleContentLoaded = function () {
                     setTimeout(function () {
@@ -1313,7 +1312,8 @@
                 height: SIZE,
                 opacity: OPACITY,
                 display: "block",
-                visibility: "visible"
+                visibility: "visible",
+                background: "red"
             });
             document.body.append(adElement);
             return adElement;
@@ -1336,14 +1336,11 @@
         return AdblockDetector;
     }());
 
+    var spanEl = document.getElementById("result");
     AdblockDetector.check().then(function (result) {
-        setTimeout(function () {
-            var spanEl = document.getElementById("result");
-            spanEl.textContent = "\u0411\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0449\u0438\u043A".concat(result ? "" : " не", " \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D");
-            spanEl.style.color = result ? "red" : "green";
-        }, 1000);
+        spanEl.textContent = "\u0411\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0449\u0438\u043A".concat(result ? "" : " не", " \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D");
+        spanEl.style.color = result ? "red" : "green";
     });
-    alert("hi");
 
 })();
 //# sourceMappingURL=index.js.map
