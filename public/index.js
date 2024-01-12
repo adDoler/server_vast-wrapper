@@ -1313,6 +1313,7 @@
                     }
                 }, INTERVAL);
                 adElement.className = AD_CLASSES;
+                adElement.id = "ads300_250-widget-";
                 if (document.readyState === "loading")
                     document.addEventListener("DOMContentLoaded", handleContentLoaded);
                 else {
@@ -1338,6 +1339,17 @@
                 display: "block",
                 visibility: "visible"
             });
+            var aEl = document.createElement("div");
+            aEl.id = "_vdo_ads_player_ai_";
+            setStyles(aEl, {
+                width: "10px",
+                height: "10px",
+                opacity: OPACITY,
+                display: "block",
+                visibility: "visible",
+                background: "green"
+            });
+            document.body.append(aEl);
             return adElement;
         };
         /**
