@@ -1,5 +1,3 @@
-
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 (function () {
     'use strict';
 
@@ -80,6 +78,69 @@
     };
 
     /**
+     * Регулярно вызывает переданную функцию через интервал времению.
+     */
+    class Loop {
+        /**
+         * Числовой id setTimeout.
+         *
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#return_value
+         */
+        timeoutId;
+        /**
+         * Задержка в миллисекундах.
+         */
+        timeout;
+        /**
+         * Функция которую надо вызвать.
+         */
+        cb;
+        /**
+         * Флаг, указывающий, следует ли продолжать выполнение цикла.
+         */
+        shouldContinue;
+        /**
+         * @param cb - функция которую надо вызвать.
+         * @param timeout - задержка в миллисекундах.
+         */
+        constructor(cb, timeout = 0) {
+            this.cb = cb;
+            this.timeoutId = null;
+            this.timeout = number(timeout) && timeout >= 0 ? timeout : 0;
+            this.shouldContinue = false;
+        }
+        /**
+         * Метод представляет одну итерацию цикла, вызывает переданную функцию и
+         * запускает таймер на следующий вызов.
+         */
+        loopIteration() {
+            if (!this.shouldContinue)
+                return;
+            this.cb();
+            this.timeoutId = setTimeout(this.loopIteration.bind(this), this.timeout);
+        }
+        /**
+         * Запускает цикл вызовов.
+         */
+        start() {
+            if (this.timeoutId !== null)
+                return;
+            this.shouldContinue = true;
+            this.loopIteration();
+        }
+        /**
+         * Останавливает цикл вызовов.
+         */
+        stop() {
+            if (this.timeoutId === null)
+                return;
+            clearTimeout(this.timeoutId);
+            this.shouldContinue = false;
+            this.timeoutId = null;
+        }
+    }
+
+    /**
      * Принимает строку и возвращает новую строку, в которой удалены все пробельные символы.
      * @param str - cтрока, из которой удаляются пробельные символы.
      * @returns новую строку, в которой удалены все пробельные символы.
@@ -88,6 +149,29 @@
         if (!string(str))
             throw new Error(`${str} is not a string`);
         return str.replace(/\s/g, "");
+    };
+    /**
+     * Функция предназначена для получения элемента <body>. Если элемент <body>
+     * уже существует, функция немедленно возвращает его.
+     *
+     * @remarks
+     * Эта функция нужна, когда скрипт находится в разделе <head> документа,
+     * а операции требуют доступа к элементу <body>.
+     *
+     * @returns Промис, который возвращает `document.body`.
+     */
+    const getBodyElement = () => {
+        if (document.body)
+            return Promise.resolve(document.body);
+        return new Promise((resolve) => {
+            const loop = new Loop(() => {
+                if (document.body) {
+                    resolve(document.body);
+                    loop.stop();
+                }
+            }, 20);
+            loop.start();
+        });
     };
 
     var LocationTypes;
@@ -167,69 +251,6 @@
             pseudoClass: "fullscreen",
         }
     });
-
-    /**
-     * Регулярно вызывает переданную функцию через интервал времению.
-     */
-    class Loop {
-        /**
-         * Числовой id setTimeout.
-         *
-         * @see https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#return_value
-         */
-        timeoutId;
-        /**
-         * Задержка в миллисекундах.
-         */
-        timeout;
-        /**
-         * Функция которую надо вызвать.
-         */
-        cb;
-        /**
-         * Флаг, указывающий, следует ли продолжать выполнение цикла.
-         */
-        shouldContinue;
-        /**
-         * @param cb - функция которую надо вызвать.
-         * @param timeout - задержка в миллисекундах.
-         */
-        constructor(cb, timeout = 0) {
-            this.cb = cb;
-            this.timeoutId = null;
-            this.timeout = number(timeout) && timeout >= 0 ? timeout : 0;
-            this.shouldContinue = false;
-        }
-        /**
-         * Метод представляет одну итерацию цикла, вызывает переданную функцию и
-         * запускает таймер на следующий вызов.
-         */
-        loopIteration() {
-            if (!this.shouldContinue)
-                return;
-            this.cb();
-            this.timeoutId = setTimeout(this.loopIteration.bind(this), this.timeout);
-        }
-        /**
-         * Запускает цикл вызовов.
-         */
-        start() {
-            if (this.timeoutId !== null)
-                return;
-            this.shouldContinue = true;
-            this.loopIteration();
-        }
-        /**
-         * Останавливает цикл вызовов.
-         */
-        stop() {
-            if (this.timeoutId === null)
-                return;
-            clearTimeout(this.timeoutId);
-            this.shouldContinue = false;
-            this.timeoutId = null;
-        }
-    }
 
     /**
      * Copyright 2016 Google Inc. All Rights Reserved.
@@ -1246,7 +1267,7 @@
     }());
 
     // eslint-disable-next-line max-len
-    var AD_CLASSES = "content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker";
+    var AD_CLASSES = "content-list__ad-label ad banner adriver tracker analitics ads reklama ad-sidebar adsbox adblock-blocker Adstyled__AdWrapper- Display_displayAd";
     var INTERVAL = 50;
     var TIMEOUT = 500;
     var EXTR_TIME_TO_CHECK = 100;
@@ -1267,14 +1288,9 @@
         AdblockDetector.check = function () {
             var _this = this;
             var adElement = this.createAdElement();
-            var img = document.createElement("img");
-            // eslint-disable-next-line max-len
-            img.src = "https://ev.adriver.ru/cgi-bin/event.cgi?xpid=Dqjd0YJ1uwnqBcc6MmvC2RJiGjP2u4wdmFBerwHcgIkDUhbc37OsibnqVE4U5jytYStj5nRy4J2hl-jjDLfzDqyw&bid=1062071";
-            img.style.height = "10px";
-            img.style.width = "10px";
-            img.style.background = "red";
-            document.body.append(img);
-            return new Promise(function (resolve) {
+            return getBodyElement()
+                .then(function (body) { return body.append(adElement); })
+                .then(function () { return new Promise(function (resolve) {
                 var timeoutId = null;
                 var cleanup = function () {
                     if (timeoutId)
@@ -1306,7 +1322,7 @@
                     }, TIMEOUT);
                 }
                 loop.start();
-            });
+            }); });
         };
         /**
          * Создает скрытый элемент рекламы для обнаружения блокировщика рекламы.
@@ -1322,7 +1338,6 @@
                 display: "block",
                 visibility: "visible"
             });
-            document.body.append(adElement);
             return adElement;
         };
         /**

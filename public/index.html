@@ -1,42 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-    <script>window.adriverCalls = ((Array.isArray(window.adriverCalls) && window.adriverCalls) || []);</script>
-    <script src="./anti-adblock.js"></script>
-    <script src="./adriver-core.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adblock Detector</title>
 </head>
-
 <body>
 
-    <div id="slot"></div>
+    <!-- 
+        Многие блокировщики не работают в локальной сети,
+        поэтому нужно загрузить страницу на сервер.
+     -->
 
-    <script>
+    <h1>
+        Результат: <span id="result"></span>
+    </h1>
 
-        window.adriverCalls.push(() => {
-
-            window.AdR.create("banner", {
-                slot: document.getElementById("slot"),
-            // reload: 10,
-            params: {
-                sid: 1,
-                ad: 746925,
-                pid: 3827186,
-                bid: 9681402,
-                bn: 9681402,
-                bt: 52,
-                ph: "sidebar"
-            }}).then(banner => {
-
-
-
-            }).catch(error =>
-                console.log(error));
-        });
-        
-
-    </script>
+    <script src="index.js"></script>
 
 </body>
-
 </html>
